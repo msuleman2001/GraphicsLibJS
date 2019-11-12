@@ -1,0 +1,34 @@
+<script type="text/javascript" src="graphics.js"></script>
+<script type="text/javascript">
+function drawLine(x1, y1, x2, y2, canvas_name, color_name)
+{
+	var x, y, m, b;
+	m = (y2 - y1) / (x2 - x1);
+	b = y1 - m * x1;
+	x = x1;
+	while(x < x2)
+	{
+		y = m * x + b;
+		putpixel(x, y, canvas_name, color_name);
+		x++;
+	}
+	return false;
+}
+
+function drawCircle(xc, yc, r, canvas_name, color_name)
+{
+	var x, y;
+	var th = 0; 
+	while(th <= 6.284)
+	{
+		x = r * Math.cos(th);
+		y = r * Math.sin(th);
+		putpixel(xc + x, yc + y, canvas_name, color_name);
+		th += .01;
+	}
+}
+</script>
+<input type="button" value="Draw Line" onclick="drawLine(10, 10, 100, 100, 'mycanvas', 'red');" />
+<input type="button" value="Draw Circle" onclick="drawCircle(300, 300, 30, 'mycanvas', 'blue');"><br/>
+<canvas id="mycanvas" height="500" width="500" style="border: solid 1px red;">
+</canvas>
