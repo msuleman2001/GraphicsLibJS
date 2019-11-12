@@ -28,7 +28,7 @@ function drawCircle(xc, yc, r, canvas_name, color_name)
 	}
 }
 </script>
-<input type="button" value="Draw Line" onclick="drawLine(10, 10, 100, 100, 'mycanvas', 'red');" />
-<input type="button" value="Draw Circle" onclick="drawCircle(300, 300, 30, 'mycanvas', 'blue');"><br/>
+<input type="button" id="btnLine" value="Draw Line" onclick="drawLine(10, 10, 100, 100, 'mycanvas', 'red');" />
+<input type="button" id="btnCircle" value="Draw Circle" onclick="drawCircle(300, 300, 30, 'mycanvas', 'blue');"><br/>
 <canvas id="mycanvas" height="500" width="500" style="border: solid 1px red;">
 </canvas>
